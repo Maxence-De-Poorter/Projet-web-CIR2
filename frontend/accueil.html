@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>annonces</title>
+    <link rel="stylesheet" href="test.css">
+  </head>
+  <body>
+    <div id="annonces"></div>
+    <script>
+      function fetchAnnonces() {
+        fetch('tmp.json')  //Plus tard ce sera le lien vers le backend
+            .then(response => response.json())
+            .then(annonces => {
+            // Manipulation des données récupérées
+            annonces.forEach(annonce => {
+                const div = document.createElement('div');
+                div.innerHTML = `
+                <img src="${annonce.image}" alt="Annonce ${annonce.id}">
+                <h2>${annonce.type}</h2>
+                <p>Prix : ${annonce.price}€</p>
+                <p>Surface : ${annonce.surface}m²</p>
+                <p>Pièce(s) : ${annonce.nbRooms}</p>
+                <p>Posté le ${new Date(annonce.onMarketSince).toLocaleDateString()}</p>
+                `;
+                document.body.appendChild(div);
+            });
+            })
+            .catch(error => console.error(error));
+        }
+
+        fetchAnnonces();
+
+    </script>
+  </body>
+</html>
