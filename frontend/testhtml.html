@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LILLE IMMO</title>
+    <link rel="stylesheet" type="text/css" href="testcss2.css">
+	<script src="script.js"></script>
+</head>
+  
+<body>
+	<input type="checkbox" id="darkmode-toggle"/>
+	<label for="darkmode-toggle" id="darklabel"></label>
+	<div class="background"></div>
+  
+	<button class="cybr-btn">
+	  LILLE IMMO<span aria-hidden></span>
+	  <span aria-hidden class="cybr-btn__glitch">scrapping</span>
+	  <span aria-hidden class="cybr-btn__tag">CIR-2</span>
+	</button>
+
+    <div class="content">
+      <div class="filters">
+		<label for="price">Prix maximum :</label>
+		<input type="number" id="price" name="price" min="0" step="1000">
+
+		<label for="surface">Surface minimum :</label>
+		<input type="number" id="surface" name="surface" min="0" step="10">
+
+		<label for="rooms">Nombre de pièces :</label>
+		<input type="number" id="rooms" name="rooms" min="0" max="10">
+
+		<label for="tri">Tri :</label>
+		<select id="tri" name="tri">
+		  <option value="croissant">Prix croissant</option>
+		  <option value="décroissant">Prix décroissant</option>
+		  <option value="récent">Le plus récent</option>
+		  <option value="ancien">Le plus ancien</option>
+		</select>
+      </div>
+    </div>
+
+	<div class="items"></div>
+	
+	<div class="pagination"></div>
+</body>
+</html>
+
