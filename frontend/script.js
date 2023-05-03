@@ -45,7 +45,7 @@ function fetchAnnonces(annonces, pageNumber, pageSize, searchValues) {
     }
 
     // Récupérer le tableau JSON complet depuis le backend
-    fetch('tmp.json')
+    fetch('http://localhost:3000/annonce')
     .then(response => response.json())
     .then(annonces => {
     // Initialisation avec la première page de 10 annonces
